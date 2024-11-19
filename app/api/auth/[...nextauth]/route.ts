@@ -26,7 +26,7 @@ export const authOptions = {
                 if (!credentials) {
                     throw new Error("No credentials provided");
                 }
-                const user = await User.findOne({email: credentials.email});
+                const user = await User.findOne({email: credentials.email}).select('+password');
                 if(user){
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
