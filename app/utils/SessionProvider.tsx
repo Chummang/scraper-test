@@ -1,10 +1,10 @@
 "use client";
 /* eslint-disable no-console */
-import React from "react";
+import React, { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 
 interface AuthProviderProps {
-    children: any; // Specify the type for children
+    children: ReactNode; // Specify the type for children
 }
 
 const AuthProvider = ({children}: AuthProviderProps) => {

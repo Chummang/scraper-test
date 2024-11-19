@@ -15,9 +15,9 @@ const isValidEmail = (email: string) => {
 
 const handleSubmit= async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-  const form: any= e.currentTarget; // Get the form element
-    const email = form[0].value; // Access the email input
-    const password = form[1].value; // Access the password input
+  const form = e.currentTarget as HTMLFormElement; // Get the form element
+    const email = (form[0] as HTMLFormElement).value; // Access the email input
+    const password = (form[1] as HTMLFormElement).value; // Access the password input
 
   if(!isValidEmail(email)){
     setError("Email is invalid");
