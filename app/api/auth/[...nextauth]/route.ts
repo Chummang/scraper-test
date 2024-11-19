@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 import NextAuth from "next-auth"
-import {Account, User as AuthUser } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs";
 import User from "@/app/models/User";
 import connect from "@/app/utils/db";
 
-export const authOptions: any = {
+export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
