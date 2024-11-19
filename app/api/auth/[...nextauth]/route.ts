@@ -28,9 +28,14 @@ export const authOptions = {
                         return user;
                     }
                 }
-            } catch (err: any) {
-                throw new Error(err);
+            } catch (err) {
+                if (err instanceof Error) {
+                    throw new Error(err.message); // Capture the original error message
+                } else {
+                    throw new Error("An unknown error occurred during authentication");
+                }
             }
+            return null; // Return null if authorization fails
         }
     }),
     // ...add more providers here
