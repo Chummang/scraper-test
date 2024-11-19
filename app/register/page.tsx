@@ -1,6 +1,6 @@
 "use client"
 /* eslint-disable no-console */
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 
@@ -13,10 +13,11 @@ const isValidEmail = (email: string) => {
   return emailRegex.test(email);
 };
 
-const handleSubmit= async (e: any) => {
+const handleSubmit= async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-  const email = e.target[0].value;
-  const password= e.target[1].value;
+  const form: any= e.currentTarget; // Get the form element
+    const email = form[0].value; // Access the email input
+    const password = form[1].value; // Access the password input
 
   if(!isValidEmail(email)){
     setError("Email is invalid");

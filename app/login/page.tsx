@@ -1,6 +1,6 @@
 "use client"
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { signIn, useSession } from "next-auth/react";
@@ -22,33 +22,35 @@ const Login = () => {
 };
 
 
- const handleSubmit = async (e: any) => {
+ const handleSubmit = async (e: FormEvent<HTMLElement>) => {
   e.preventDefault();
-  const email = e.target[0].value;
-  const password = e.target[1].value;
+  const form: any = e.currentTarget; 
+  const email = form[0].value;
+  const password = form[1].value;
 
-  if(!isValidEmail(email)) {
+  if (!isValidEmail(email)) {
     setError("Email is invalid");
     return;
   }
 
-  if(!password || password.length < 8) {
-    setError("Password is invlaid");
+  if (!password || password.length < 8) {
+    setError("Password is invalid");
     return;
   }
+
   const res = await signIn("credentials", {
     redirect: false,
     email,
     password
-  })
+  });
 
-  if(res?.error) {
+  if (res?.error) {
     setError("Invalid email or password");
     if (res?.url) router.replace("/dashboard");
   } else {
-    setError("")
+    setError("");
   }
- };
+};
 
   return (
     <div className="grid place-items-center max-h-full">
