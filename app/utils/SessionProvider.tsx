@@ -1,5 +1,5 @@
 "use client";
-
+/* eslint-disable no-console */
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 

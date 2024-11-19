@@ -1,5 +1,5 @@
 "use client"
-
+/* eslint-disable no-console */
 import React from 'react'
 import Link from 'next/link';
 import {signOut, useSession } from "next-auth/react";

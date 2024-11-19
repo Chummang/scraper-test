@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import User from '@/app/models/User';
 import connect from "@/app/utils/db";
 import bcrypt from "bcryptjs";

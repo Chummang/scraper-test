@@ -1,5 +1,5 @@
 "use client"
-
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
