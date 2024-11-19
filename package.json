@@ -3,28 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@sparticuz/chromium-min": "^131.0.0",
     "bcryptjs": "^2.4.3",
-    "ejs": "^3.1.10",
-    "jsdom": "^25.0.1",
     "mongoose": "^8.8.1",
     "next": "15.0.3",
     "next-auth": "^4.24.10",
-    "path": "^0.12.7",
-    "pdf2json": "^3.1.4",
     "puppeteer-core": "^23.8.0",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-user-data-dir": "^2.4.1",
-    "puppeteer-extra-plugin-user-preferences": "^2.4.1",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "tailwind-merge": "^2.5.4"
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
