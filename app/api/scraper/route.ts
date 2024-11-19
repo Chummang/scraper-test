@@ -16,7 +16,7 @@ export async function POST() {
   const browser = await puppeteer.launch({
     args: isLocal ? puppeteer.defaultArgs() : chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
+    executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath('s3://test-scraper1/chromium-v131.0.0-pack/'),
     headless: chromium.headless,
   });
 
