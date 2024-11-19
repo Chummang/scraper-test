@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 
-export const POST = async (request: any) => {
+export const POST = async (request: Request) => {
     const {email, password } = await request.json();
 
     await connect();
@@ -24,8 +24,8 @@ return new NextResponse("Email address is already taken.", {status: 400});
     try {
         await newUser.save();
         return new NextResponse("Registration Successful.", {status: 200});
-    } catch (err: any) {
-        return new NextResponse(err, {
+    } catch (err) {
+        return new NextResponse((err as Error).message || "An error occured", {
             status: 500,
         })
         

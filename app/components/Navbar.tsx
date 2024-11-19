@@ -6,7 +6,7 @@ import {signOut, useSession } from "next-auth/react";
 
 
 const Navbar = () => {
-  const {data: session}: any = useSession();
+  const {data: session} = useSession();
   return (
     <div className="flex justify-center shadow-lg">
         <ul className="flex justify-end p-5">

@@ -3,7 +3,11 @@
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 
-const AuthProvider = ({children}: any) => {
+interface AuthProviderProps {
+    children: any; // Specify the type for children
+}
+
+const AuthProvider = ({children}: AuthProviderProps) => {
     return <SessionProvider>{children}</SessionProvider>;
 }
 
