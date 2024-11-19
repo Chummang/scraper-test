@@ -5,6 +5,11 @@ import bcrypt from "bcryptjs";
 import User from "@/app/models/User";
 import connect from "@/app/utils/db";
 
+interface Credentials {
+    email: string;
+    password: string;
+}
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -15,9 +20,12 @@ export const authOptions = {
             email: {label: "Email", type: "text"},
             password: {label: "Password", type: "password"},
         },
-        async authorize(credentials: any) {
+        async authorize(credentials: Credentials | undefined) {
             await connect();
             try {
+                if (!credentials) {
+                    throw new Error("No credentials provided");
+                }
                 const user = await User.findOne({email: credentials.email});
                 if(user){
                     const isPasswordCorrect = await bcrypt.compare(
