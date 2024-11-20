@@ -26,15 +26,15 @@ For this project I used:
 - MongoDB to store user information
 
 
-Data Scraping and Preparation
+Data Scraping and Preparation:  
 I used a library called puppeteer-core which run in the headless and bundled serverless functions on Vercel can't exceed 50MB and Vercel was my choise for deployment.
 However, puppeteer-core comes with its own set of drawback and I was unable to implement the feature to scrape PDF documents.
 
 
-Basic User Authentication System
+Basic User Authentication System:
 I used Next-Auth and bcrypt for authentication and successfully implemented Register and Login functionality 
 
-Organization and Sharing Features
+Organization and Sharing Features: 
 I have yet to implement organization and sharing features.
 
 
